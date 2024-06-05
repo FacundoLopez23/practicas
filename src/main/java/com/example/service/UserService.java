@@ -33,4 +33,13 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+
+    public Optional<User> authenticate(String username, String password) {
+        Optional<User> user = findByUsername(username);
+        if (user.isPresent() && user.get().getPassword().equals(password)) {
+            return user;
+        } else {
+            return Optional.empty();
+        }
+    }
 }
