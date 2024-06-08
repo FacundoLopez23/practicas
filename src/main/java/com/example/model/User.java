@@ -19,10 +19,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String nombre;
     
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String apellido;
     
     @Column(nullable = false, unique = true)
@@ -34,5 +34,5 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    // Getters and Setters
+    
 }
